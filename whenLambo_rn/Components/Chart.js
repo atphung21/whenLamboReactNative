@@ -33,12 +33,12 @@ const Charts = ({containerStyle, chartPrices}) => {
     return `$${Number(value).toFixed(2)}`;
   };
 
-  const formatChartXLabels = (value) => {
+  const formatChartXLabels = value => {
     if (value === '') {
       return '';
     }
-    return value.toFixed(2);
-  }
+    return `$${value.toFixed(2)}`;
+  };
 
   const getYAxisValue = () => {
     'worklet';
@@ -49,7 +49,13 @@ const Charts = ({containerStyle, chartPrices}) => {
       let higherMidValue = (maxValue + midValue) / 2;
       let lowerMidValue = (midValue + minValue) / 2;
 
-      return [formatChartXLabels(maxValue), formatChartXLabels(higherMidValue), formatChartXLabels(midValue), formatChartXLabels(lowerMidValue), formatChartXLabels(minValue)];
+      return [
+        formatChartXLabels(maxValue),
+        formatChartXLabels(higherMidValue),
+        formatChartXLabels(midValue),
+        formatChartXLabels(lowerMidValue),
+        formatChartXLabels(minValue),
+      ];
     }
   };
   return (
