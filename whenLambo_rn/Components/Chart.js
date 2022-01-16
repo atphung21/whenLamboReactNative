@@ -30,7 +30,7 @@ const Charts = ({containerStyle, chartPrices}) => {
     if (value === '') {
       return '';
     }
-    return `$${Number(value).toFixed(2)}`;
+    return `$${Number(value).toFixed(2)}`
   };
 
   const formatChartXLabels = value => {
@@ -56,7 +56,7 @@ const Charts = ({containerStyle, chartPrices}) => {
         formatChartXLabels(lowerMidValue),
         formatChartXLabels(minValue),
       ];
-    }
+    } return [];
   };
   return (
     <View style={{...containerStyle}}>

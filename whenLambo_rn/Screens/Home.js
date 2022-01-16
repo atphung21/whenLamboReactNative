@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { MainLayout } from './index';
-import { connect } from 'react-redux';
-import { getHoldings, getCoinMarket } from '../Stores/Market/marketActions';
-import { useFocusEffect } from '@react-navigation/native';
-import { COLORS, SIZES, FONTS } from '../Constants/index';
-import { BalanceInfo, iconTextButton, Charts } from '../Components/index';
+import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
+import {MainLayout} from './index';
+import {connect} from 'react-redux';
+import {getHoldings, getCoinMarket} from '../Stores/Market/marketActions';
+import {useFocusEffect} from '@react-navigation/native';
+import {COLORS, SIZES, FONTS} from '../Constants/index';
+import {BalanceInfo, iconTextButton, Charts} from '../Components/index';
 
 const dummyData = [
   {
@@ -22,27 +22,26 @@ const dummyData = [
   },
 ];
 
-const Home = ({ getHoldings, getCoinMarket, myHoldings, coins }) => {
+const Home = ({getHoldings, getCoinMarket, myHoldings, coins}) => {
   useFocusEffect(
     React.useCallback(() => {
       getHoldings((holdings = dummyData));
       getCoinMarket();
-    }, [])
+    }, []),
   );
 
   let totalWallet = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.total || 0),
-    0
+    0,
   );
 
   let valueChange = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.holding_value_change_7d || 0),
-    0
+    0,
   );
 
   let perChange = (valueChange / (totalWallet - valueChange)) * 100;
 
-console.log('Coins [0]', coins[0]?.sparkline_in_7d?.price)
   function renderWalletInfoSection() {
     return (
       <View
@@ -51,8 +50,7 @@ console.log('Coins [0]', coins[0]?.sparkline_in_7d?.price)
           borderBottomLeftRadius: 25,
           borderBottomRightRadius: 25,
           backgroundColor: COLORS.gray,
-        }}
-      >
+        }}>
         {/* {Balance Info} */}
         <BalanceInfo
           title="Your Wallet"
@@ -73,8 +71,7 @@ console.log('Coins [0]', coins[0]?.sparkline_in_7d?.price)
         style={{
           flex: 1,
           backgroundColor: COLORS.black,
-        }}
-      >
+        }}>
         {/* {Header} */}
         {renderWalletInfoSection()}
         {/* {Chart} */}
@@ -83,9 +80,79 @@ console.log('Coins [0]', coins[0]?.sparkline_in_7d?.price)
             marginTop: SIZES.padding * 2,
           }}
           chartPrices={coins[0]?.sparkline_in_7d?.price}
-        ></Charts>
-
+        />
         {/* {Top Crytos} */}
+        <FlatList
+          data={coins}
+          keyExtractor={item => item.id}
+          contentContainerStyle={{
+            marginTop: 30,
+            paddingHorizontal: SIZES.padding,
+          }}
+          ListHeaderComponent={
+            <View
+              style={{
+                marginBottom: SIZES.radius,
+              }}>
+              <Text
+                style={{
+                  color: 'white',
+                  ...FONTS.h3,
+                  fontSize: 20,
+                }}>
+                Top Cryptocurrency
+              </Text>
+            </View>
+          }
+          renderItem={({item}) => {
+            return (
+              <TouchableOpacity
+                style={{
+                  height: 55,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                {/* Logo */}
+                <View
+                  style={{
+                    width: 35,
+                  }}>
+                  <Image
+                    source={{
+                      uri: item.image,
+                      height: 20,
+                      width: 20,
+                    }}
+                  />
+                </View>
+                {/* Name */}
+                <View
+                  style={{
+                    flex: 1,
+                  }}>
+                  <Text
+                    style={{
+                      color: COLORS.white,
+                      ...FONTS.h3,
+                    }}>
+                    {item.name}
+                  </Text>
+                </View>
+                {/* Price */}
+                <View>
+                  <Text
+                    style={{
+                      color: COLORS.white,
+                      ...FONTS.h3,
+                    }}>
+                    ${item.current_price}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          }}
+        />
       </View>
     </MainLayout>
   );
@@ -108,7 +175,7 @@ function mapDispatchToProps(dispatch) {
       sparkline,
       priceChangePerc,
       perPage,
-      page
+      page,
     ) => {
       return dispatch(
         getHoldings(
@@ -119,8 +186,8 @@ function mapDispatchToProps(dispatch) {
           sparkline,
           priceChangePerc,
           perPage,
-          page
-        )
+          page,
+        ),
       );
     },
     getCoinMarket: (
@@ -130,7 +197,7 @@ function mapDispatchToProps(dispatch) {
       sparkline,
       priceChangePerc,
       perPage,
-      page
+      page,
     ) => {
       return dispatch(
         getCoinMarket(
@@ -140,8 +207,8 @@ function mapDispatchToProps(dispatch) {
           sparkline,
           priceChangePerc,
           perPage,
-          page
-        )
+          page,
+        ),
       );
     },
   };
