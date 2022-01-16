@@ -66,27 +66,27 @@ export const FONTS = {
     lineHeight: 22,
   },
   body1: {
-    fontFamily: 'Arial-Regular',
+    fontFamily: 'Arial',
     fontSize: SIZES.body1,
     lineHeight: 36,
   },
   body2: {
-    fontFamily: 'Arial-Regular',
+    fontFamily: 'Arial',
     fontSize: SIZES.body2,
     lineHeight: 30,
   },
   body3: {
-    fontFamily: 'Arial-Regular',
+    fontFamily: 'Arial',
     fontSize: SIZES.body3,
     lineHeight: 22,
   },
   body4: {
-    fontFamily: 'Arial-Regular',
+    fontFamily: 'Arial',
     fontSize: SIZES.body4,
     lineHeight: 22,
   },
   body5: {
-    fontFamily: 'Arial-Regular',
+    fontFamily: 'Arial',
     fontSize: SIZES.body5,
     lineHeight: 22,
   },

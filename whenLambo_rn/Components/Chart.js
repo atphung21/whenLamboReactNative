@@ -21,9 +21,16 @@ const Charts = ({ containerStyle, chartPrices }) => {
           y: item,
         };
       }) : [];
+
     const points = monotoneCubicInterpolation({ data,range: 40 });
-    console.log('data:', data);
-    console.log('Points ', points);
+
+    const formatUSD = (value) => {
+      'worklet';
+      if (value === '') {
+        return '';
+      }
+      return `$${Number(value).toFixed(2)}`
+    }
 
   return (
     <View style={{ ...containerStyle }}>
@@ -68,9 +75,18 @@ const Charts = ({ containerStyle, chartPrices }) => {
                     borderRadius: 10,
                     backgroundColor: COLORS.lightGreen,
                   }}
-                >
-                </View>
+                />
               </View>
+              {/* Y label */}
+              <ChartYLabel
+              format={ formatUSD }
+                style={{
+                  color: COLORS.white,
+                  ...FONTS.body5
+                }}
+              ></ChartYLabel>
+
+              {/* X Label */}
             </View>
           </ChartDot>
         </ChartPathProvider>
