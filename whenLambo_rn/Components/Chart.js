@@ -20,8 +20,7 @@ const Charts = ({ containerStyle, chartPrices }) => {
           x: startUnixTime + (index + 1) * 3600,
           y: item,
         };
-      })
-    : [];
+      }) : [];
     const points = monotoneCubicInterpolation({ data,range: 40 });
     console.log('data:', data);
     console.log('Points ', points);
@@ -48,7 +47,7 @@ const Charts = ({ containerStyle, chartPrices }) => {
                 left: -35,
                 width: 80,
                 alignItems: 'center',
-                backgroundColor: 'red',
+                backgroundColor:COLORS.transparentBlack,
               }}
             >
               {/* DOT */}

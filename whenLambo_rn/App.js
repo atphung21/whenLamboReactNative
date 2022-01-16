@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Tabs from './Navigation/tabs';
@@ -32,17 +31,5 @@ const App = () => {
     </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'gray',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-  },
-  SafeArea: {
-    flex: 1,
-  },
-});
 
 export default App;
