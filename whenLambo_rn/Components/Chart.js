@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {View, Text} from 'react-native';
 import {
   ChartDot,
   ChartPath,
@@ -8,10 +8,10 @@ import {
   ChartYLabel,
   monotoneCubicInterpolation,
 } from '@rainbow-me/animated-charts';
-import { SIZES, COLORS, FONTS } from '../Constants/index';
+import {SIZES, COLORS, FONTS} from '../Constants/index';
 import moment from 'moment';
 
-const Charts = ({ containerStyle, chartPrices }) => {
+const Charts = ({containerStyle, chartPrices}) => {
   // Points on charts
   let startUnixTime = moment().subtract(7, 'day').unix();
   const data = chartPrices
@@ -20,27 +20,67 @@ const Charts = ({ containerStyle, chartPrices }) => {
           x: startUnixTime + (index + 1) * 3600,
           y: item,
         };
-      }) : [];
+      })
+    : [];
 
-    const points = monotoneCubicInterpolation({ data,range: 40 });
+  const points = monotoneCubicInterpolation({data, range: 40});
 
-    const formatUSD = (value) => {
-      'worklet';
-      if (value === '') {
-        return '';
-      }
-      return `$${Number(value).toFixed(2)}`
+  const formatUSD = value => {
+    'worklet';
+    if (value === '') {
+      return '';
     }
+    return `$${Number(value).toFixed(2)}`;
+  };
 
+  const formatChartXLabels = (value) => {
+    if (value === '') {
+      return '';
+    }
+    return value.toFixed(2);
+  }
+
+  const getYAxisValue = () => {
+    'worklet';
+    if (chartPrices != undefined) {
+      let minValue = Math.min(...chartPrices);
+      let maxValue = Math.max(...chartPrices);
+      let midValue = (minValue + maxValue) / 2;
+      let higherMidValue = (maxValue + midValue) / 2;
+      let lowerMidValue = (midValue + minValue) / 2;
+
+      return [formatChartXLabels(maxValue), formatChartXLabels(higherMidValue), formatChartXLabels(midValue), formatChartXLabels(lowerMidValue), formatChartXLabels(minValue)];
+    }
+  };
   return (
-    <View style={{ ...containerStyle }}>
+    <View style={{...containerStyle}}>
+      <View
+        style={{
+          position: 'absolute',
+          left: 15,
+          top: 0,
+          bottom: 0,
+          justifyContent: 'space-between',
+        }}>
+        {getYAxisValue().map((item, index) => {
+          return (
+            <Text
+              key={index}
+              style={{
+                color: COLORS.lightGray3,
+                ...FONTS.body4,
+              }}>
+              {item}
+            </Text>
+          );
+        })}
+      </View>
       {data.length > 0 && (
         <ChartPathProvider
           data={{
             points: points,
             smoothingStrategy: 'bezier',
-          }}
-        >
+          }}>
           <ChartPath
             height={150}
             width={SIZES.width}
@@ -54,9 +94,8 @@ const Charts = ({ containerStyle, chartPrices }) => {
                 left: -35,
                 width: 80,
                 alignItems: 'center',
-                backgroundColor:COLORS.transparentBlack,
-              }}
-            >
+                backgroundColor: COLORS.transparentBlack,
+              }}>
               {/* DOT */}
               <View
                 style={{
@@ -66,8 +105,7 @@ const Charts = ({ containerStyle, chartPrices }) => {
                   height: 25,
                   borderRadius: 15,
                   backgroundColor: COLORS.white,
-                }}
-              >
+                }}>
                 <View
                   style={{
                     width: 15,
@@ -79,14 +117,12 @@ const Charts = ({ containerStyle, chartPrices }) => {
               </View>
               {/* Y label */}
               <ChartYLabel
-              format={ formatUSD }
+                format={formatUSD}
                 style={{
                   color: COLORS.white,
-                  ...FONTS.body5
+                  ...FONTS.body5,
                 }}
-              ></ChartYLabel>
-
-              {/* X Label */}
+              />
             </View>
           </ChartDot>
         </ChartPathProvider>
