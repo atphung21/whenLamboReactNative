@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import {FONTS, COLORS, SIZES} from '../Constants/index';
 import {getHoldings, getCoinMarket} from '../Stores/Market/marketActions';
 
-const Market = ({getHoldings, getCoinMarket, coins}) => {
-getCoinMarket();
+const Market = ({getHoldings, coins}) => {
+
 console.log('Marketpage: ', coins)
   return (
     <MainLayout>
