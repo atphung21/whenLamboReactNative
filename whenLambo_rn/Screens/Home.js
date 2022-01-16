@@ -139,6 +139,8 @@ const Home = ({getHoldings, getCoinMarket, myHoldings, coins}) => {
                     {item.name}
                   </Text>
                 </View>
+                {/* Mini Chart */}
+
                 {/* Price */}
                 <View>
                   <Text
