@@ -6,6 +6,8 @@ import {BalanceInfo, Charts} from '../Components/index';
 import {connect} from 'react-redux';
 
 const Portfolio = ({myHoldings, myData}) => {
+
+  console.log('port', myHoldings[0].symbol)
   let totalWallet = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.total || 0),
     0,
@@ -135,7 +137,7 @@ const Portfolio = ({myHoldings, myData}) => {
                       color: COLORS.white,
                       ...FONTS.h3,
                     }}>
-                    {item.name}
+                    {item.symbol}
                   </Text>
                 </View>
                 {/* Mini Chart */}
