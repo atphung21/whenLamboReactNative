@@ -1,12 +1,13 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
+import {View, Text} from 'react-native';
 import {MainLayout} from './index';
 import {FONTS, COLORS, SIZES} from '../Constants/index';
-import { renderWalletInfoSection } from './Home';
-import { BalanceInfo } from '../Components/index';
-import {connect} from 'react-redux';
+import { BalanceInfo } from '../Components/index'
+import { connect } from 'react-redux';
 
-const Portfolio = ({ coins, myData, myHoldings }) => {
+const Portfolio = ({ myHoldings, myData}) => {
+  console.log('portfolio', myHoldings)
+  console.log('port2 ', myData)
 
   let totalWallet = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.total || 0),
@@ -22,7 +23,7 @@ const Portfolio = ({ coins, myData, myHoldings }) => {
 
   let perChange = (valueChange / (totalWallet - valueChange)) * 100;
 
-  function renderWalletInfoSection() {
+  function renderPortfolioInfoSection() {
     return (
       <View
         style={{
@@ -40,9 +41,11 @@ const Portfolio = ({ coins, myData, myHoldings }) => {
             marginTop: 50,
           }}
         />
+        {/* {Buttons} */}
       </View>
     );
   }
+
 
   return (
     <MainLayout>
@@ -51,14 +54,11 @@ const Portfolio = ({ coins, myData, myHoldings }) => {
           flex: 1,
           backgroundColor: COLORS.black,
         }}>
-        {/* {Balance Info} */}
-       {renderWalletInfoSection()}
-
+       {renderPortfolioInfoSection()}
       </View>
     </MainLayout>
   );
 };
-
 
 function mapStateToProps(state) {
   return {
@@ -120,4 +120,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, renderWalletInfoSection)(Portfolio);
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);

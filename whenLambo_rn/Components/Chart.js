@@ -42,12 +42,12 @@ const Charts = ({containerStyle, chartPrices}) => {
 
   const getYAxisValue = () => {
     'worklet';
-    if (chartPrices != undefined) {
-      let minValue = Math.min(...chartPrices);
-      let maxValue = Math.max(...chartPrices);
-      let midValue = (minValue + maxValue) / 2;
-      let higherMidValue = (maxValue + midValue) / 2;
-      let lowerMidValue = (midValue + minValue) / 2;
+    if (chartPrices !== undefined) {
+      const minValue = Math.min(...chartPrices);
+      const maxValue = Math.max(...chartPrices);
+      const midValue = (minValue + maxValue) / 2;
+      const higherMidValue = (maxValue + midValue) / 2;
+      const lowerMidValue = (midValue + minValue) / 2;
 
       return [
         formatChartXLabels(maxValue),
