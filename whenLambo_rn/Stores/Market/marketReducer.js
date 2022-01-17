@@ -1,6 +1,7 @@
 import * as marketActions from './marketActions';
 
 const initialState = {
+  myData: [],
   myHoldings: [],
   coins: [],
   error: null,
@@ -9,6 +10,16 @@ const initialState = {
 
 const marketReducer = (state = initialState, action) => {
   switch (action.type) {
+    case marketActions.FETCH_MY_HOLDINGS_DETAILS:
+      return {
+        ...state,
+        myData: action.payload.myData
+      }
+    case marketActions.FETCH_HOLDINGS_FAILURE:
+      return {
+        ...state,
+        error: action.payload.error,
+      }
     case marketActions.GET_HOLDINGS_BEGIN:
       return {
         ...state,

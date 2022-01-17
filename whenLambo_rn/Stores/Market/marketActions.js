@@ -7,7 +7,51 @@ export const GET_HOLDINGS_FAILURE = 'GET_HOLDINGS_FAILURE';
 export const GET_COIN_MARKET_BEGIN = 'GET_COIN_MARKET_BEGIN';
 export const GET_COIN_MARKET_SUCCESS = 'GET_COIN_MARKET_SUCCESS';
 export const GET_COIN_MARKET_FAILURE = 'GET_COIN_MARKET_FAILURE';
+
+// export const FETCH_MY_HOLDINGS_BEGIN = 'FETCH_MY_HOLDINGS_BEGIN';
+export const FETCH_MY_HOLDINGS_DETAILS = 'FETCH_MY_HOLDINGS_DETAILS';
+export const FETCH_HOLDINGS_FAILURE ='FETCH_HOLDINGS_FAILURE';
+
 //Holdings / my holdings
+export function fetchMyHoldings () {
+  return function (dispatch) {
+    return  axios({
+      url: 'http://localhost:3005/coins',
+      method: 'GET',
+      header: {
+        Accept: 'application/json',
+      },
+    }).then((data) => {
+      console.log('axios data:', data.data)
+    if (data.status === 200) {
+      let myData = data.data.map((item) => {
+       return {
+         id: item.id,
+         qty: item.qty,
+       }
+      });
+      console.log('below axios data:', myData)
+      dispatch(setMyHoldingsDetails(myData));
+    }
+    dispatch(fetchHoldingsFailure(data.data));
+  }).catch((error) =>
+  dispatch(fetchHoldingsFailure(error)));
+}};
+
+export function setMyHoldingsDetails (myData) {
+  return {
+    type: FETCH_MY_HOLDINGS_DETAILS,
+    payload: { myData }
+  }
+}
+
+export function fetchHoldingsFailure (error) {
+  return {
+    type: FETCH_HOLDINGS_FAILURE,
+    payload: { error }
+  }
+}
+
 
 export const getHoldingsBegin = () => ({
   type: GET_HOLDINGS_BEGIN,
@@ -75,7 +119,6 @@ export function getHoldings(
               },
             };
           });
-            console.log('MyHoldings market ', myHoldings)
           dispatch(getHoldingSuccess(myHoldings));
         } else {
           dispatch(getHoldingFailure(response.data));

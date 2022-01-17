@@ -6,8 +6,6 @@ import {FONTS, COLORS, SIZES} from '../Constants/index';
 import {getHoldings, getCoinMarket} from '../Stores/Market/marketActions';
 
 const Market = ({getHoldings, coins}) => {
-
-console.log('Marketpage: ', coins)
   return (
     <MainLayout>
       <View

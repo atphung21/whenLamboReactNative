@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import {MainLayout} from './index';
 import {connect} from 'react-redux';
-import {getHoldings, getCoinMarket} from '../Stores/Market/marketActions';
+import {getHoldings, getCoinMarket, fetchMyHoldings} from '../Stores/Market/marketActions';
 import {useFocusEffect} from '@react-navigation/native';
 import {COLORS, SIZES, FONTS} from '../Constants/index';
 import {BalanceInfo, iconTextButton, Charts} from '../Components/index';
@@ -21,14 +21,15 @@ const dummyData = [
     qty: 88888,
   },
 ];
-
-const Home = ({getHoldings, getCoinMarket, myHoldings, coins}) => {
+const Home = ({getHoldings, getCoinMarket, myHoldings, coins, myData, fetchMyHoldings}) => {
   useFocusEffect(
     React.useCallback(() => {
-      getHoldings((holdings = dummyData));
+      fetchMyHoldings();
+      getHoldings((holdings = myData));
       getCoinMarket();
     }, []),
-  );
+    );
+    console.log('data; ',myData)
 
   let totalWallet = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.total || 0),
@@ -164,6 +165,7 @@ const Home = ({getHoldings, getCoinMarket, myHoldings, coins}) => {
 
 function mapStateToProps(state) {
   return {
+    myData: state.marketReducer.myData,
     myHoldings: state.marketReducer.myHoldings,
     coins: state.marketReducer.coins,
   };
@@ -215,6 +217,9 @@ function mapDispatchToProps(dispatch) {
         ),
       );
     },
+    fetchMyHoldings: () => {
+      return dispatch(fetchMyHoldings());
+    }
   };
 }
 
