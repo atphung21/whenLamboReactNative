@@ -35,6 +35,8 @@ const Home = ({getHoldings, getCoinMarket, myHoldings, coins}) => {
     0,
   );
 
+  let totalWalletFormatted = new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(totalWallet);
+
   let valueChange = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.holding_value_change_7d || 0),
     0,
@@ -54,7 +56,7 @@ const Home = ({getHoldings, getCoinMarket, myHoldings, coins}) => {
         {/* {Balance Info} */}
         <BalanceInfo
           title="Your Wallet"
-          displayAmount={totalWallet}
+          displayAmount={totalWalletFormatted}
           changePer={perChange}
           containerStyle={{
             marginTop: 50,
