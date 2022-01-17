@@ -7,7 +7,6 @@ import {connect} from 'react-redux';
 
 const Portfolio = ({myHoldings, myData}) => {
 
-  console.log('port', myHoldings[0].symbol)
   let totalWallet = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.total || 0),
     0,

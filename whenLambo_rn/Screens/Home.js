@@ -21,6 +21,7 @@ const dummyData = [
     qty: 88888,
   },
 ];
+
 const Home = ({getHoldings, getCoinMarket, myHoldings, coins, myData, fetchMyHoldings}) => {
   useFocusEffect(
     React.useCallback(() => {
