@@ -78,7 +78,28 @@ const Portfolio = ({myHoldings, myData}) => {
                   ...FONTS.h3,
                   fontSize: 20,
                 }}>
-                Top Cryptocurrency
+                Your Assets
+              </Text>
+              <Text
+                style={{
+                  color: 'white',
+                  marginTop: 30,
+                  marginBottom: 20,
+                  position: 'absolute',
+                  alignSelf: 'flex-start'
+                }}
+              >
+                Assets
+              </Text>
+              <Text
+                style={{
+                  marginTop: 30,
+                  color: 'white',
+                  position: 'absolute',
+                  alignSelf: 'flex-end',
+                }}
+              >
+                Price
               </Text>
             </View>
           }
