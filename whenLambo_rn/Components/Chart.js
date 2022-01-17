@@ -37,7 +37,8 @@ const Charts = ({containerStyle, chartPrices}) => {
     if (value === '') {
       return '';
     }
-    return `$${value.toFixed(2)}`;
+    return (new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(value));
+    //`$${value.toFixed(2)}`;
   };
 
   const getYAxisValue = () => {
@@ -100,7 +101,7 @@ const Charts = ({containerStyle, chartPrices}) => {
                 left: -35,
                 width: 80,
                 alignItems: 'center',
-                backgroundColor: COLORS.transparentBlack,
+                backgroundColor: 'transparent',
               }}>
               {/* DOT */}
               <View

@@ -148,7 +148,7 @@ const Home = ({getHoldings, getCoinMarket, myHoldings, coins}) => {
                       color: COLORS.white,
                       ...FONTS.h3,
                     }}>
-                    ${item.current_price}
+                    {new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(item.current_price)}
                   </Text>
                 </View>
               </TouchableOpacity>
