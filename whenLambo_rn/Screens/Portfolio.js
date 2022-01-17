@@ -1,17 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import {MainLayout} from './index';
 import {FONTS, COLORS, SIZES} from '../Constants/index';
-import { BalanceInfo, Charts } from '../Components/index'
-import { connect } from 'react-redux';
+import {BalanceInfo, Charts} from '../Components/index';
+import {connect} from 'react-redux';
 
-const Portfolio = ({ myHoldings, myData}) => {
+const Portfolio = ({myHoldings, myData}) => {
   let totalWallet = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.total || 0),
     0,
   );
 
-  let totalWalletFormatted = new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(totalWallet);
+  let totalWalletFormatted = new Intl.NumberFormat('us-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(totalWallet);
 
   let valueChange = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.holding_value_change_7d || 0),
@@ -43,7 +46,6 @@ const Portfolio = ({ myHoldings, myData}) => {
     );
   }
 
-
   return (
     <MainLayout>
       <View
@@ -51,12 +53,88 @@ const Portfolio = ({ myHoldings, myData}) => {
           flex: 1,
           backgroundColor: COLORS.black,
         }}>
-       {renderPortfolioInfoSection()}
-      <Charts
+        {renderPortfolioInfoSection()}
+        <Charts
           containerStyle={{
             marginTop: SIZES.padding * 2,
           }}
           chartPrices={myHoldings[0]?.sparkline_in_7d?.value}
+        />
+        <FlatList
+          data={myHoldings}
+          keyExtractor={item => item.id}
+          contentContainerStyle={{
+            marginTop: 30,
+            paddingHorizontal: SIZES.padding,
+          }}
+          ListHeaderComponent={
+            <View
+              style={{
+                marginBottom: SIZES.radius,
+              }}>
+              <Text
+                style={{
+                  color: 'white',
+                  ...FONTS.h3,
+                  fontSize: 20,
+                }}>
+                Top Cryptocurrency
+              </Text>
+            </View>
+          }
+          renderItem={({item}) => {
+            return (
+              <TouchableOpacity
+                style={{
+                  height: 55,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                {/* Logo */}
+                <View
+                  style={{
+                    width: 35,
+                  }}>
+                  <Image
+                    source={{
+                      uri: item.image,
+                      height: 20,
+                      width: 20,
+                    }}
+                  />
+                </View>
+                {/* Name */}
+                <View
+                  style={{
+                    flex: 1,
+                  }}>
+                  <Text
+                    style={{
+                      color: COLORS.white,
+                      ...FONTS.h3,
+                    }}>
+                    {item.name}
+                  </Text>
+                </View>
+                {/* Mini Chart */}
+
+                {/* Price */}
+                <View>
+                  <Text
+                    style={{
+                      color: COLORS.white,
+                      ...FONTS.h3,
+                    }}>
+                    {new Intl.NumberFormat('us-US', {
+                      style: 'currency',
+                      currency: 'USD',
+                    }).format(item.current_price)}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          }}
         />
       </View>
     </MainLayout>
@@ -119,7 +197,7 @@ function mapDispatchToProps(dispatch) {
     },
     fetchMyHoldings: () => {
       return dispatch(fetchMyHoldings());
-    }
+    },
   };
 }
 
