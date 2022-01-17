@@ -2,13 +2,10 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {MainLayout} from './index';
 import {FONTS, COLORS, SIZES} from '../Constants/index';
-import { BalanceInfo } from '../Components/index'
+import { BalanceInfo, Charts } from '../Components/index'
 import { connect } from 'react-redux';
 
 const Portfolio = ({ myHoldings, myData}) => {
-  console.log('portfolio', myHoldings)
-  console.log('port2 ', myData)
-
   let totalWallet = myHoldings.reduce(
     (acc, holdings) => acc + (holdings.total || 0),
     0,
@@ -55,6 +52,12 @@ const Portfolio = ({ myHoldings, myData}) => {
           backgroundColor: COLORS.black,
         }}>
        {renderPortfolioInfoSection()}
+      <Charts
+          containerStyle={{
+            marginTop: SIZES.padding * 2,
+          }}
+          chartPrices={myHoldings[0]?.sparkline_in_7d?.value}
+        />
       </View>
     </MainLayout>
   );
