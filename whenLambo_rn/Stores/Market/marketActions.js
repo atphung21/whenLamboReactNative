@@ -11,10 +11,21 @@ export const GET_COIN_MARKET_FAILURE = 'GET_COIN_MARKET_FAILURE';
 export const FETCH_MY_HOLDINGS_DETAILS = 'FETCH_MY_HOLDINGS_DETAILS';
 export const FETCH_HOLDINGS_FAILURE = 'FETCH_HOLDINGS_FAILURE';
 
+export const postCoin = ({id, qty}) => {
+  return (dispatch) => {
+    return axios.post('https://localhost:3005/coins', {
+      id: id,
+      qty: qty
+    });
+  }
+}
+
+
+
 //Holdings / my holdings
 export function fetchMyHoldings() {
   return function (dispatch) {
-    return axios({
+     return axios({
       url: 'http://localhost:3005/coins',
       method: 'GET',
       header: {

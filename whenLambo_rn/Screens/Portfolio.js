@@ -100,7 +100,7 @@ const Portfolio = ({myHoldings, myData}) => {
                   alignSelf: 'flex-end',
                 }}
               >
-                Price
+                Holdings
               </Text>
             </View>
           }
@@ -151,7 +151,7 @@ const Portfolio = ({myHoldings, myData}) => {
                     {new Intl.NumberFormat('us-US', {
                       style: 'currency',
                       currency: 'USD',
-                    }).format(item.current_price)}
+                    }).format(item.current_price * item.qty)}
                   </Text>
                 </View>
               </TouchableOpacity>

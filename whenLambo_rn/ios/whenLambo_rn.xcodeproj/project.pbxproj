@@ -30,6 +30,8 @@
 		00E356EE1AD99517003FC87E /* whenLambo_rnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whenLambo_rnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* whenLambo_rnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whenLambo_rnTests.m; sourceTree = "<group>"; };
+		012A774204104AA6BD81F3AA /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		0AF12ADF8C754FF09EE96F7C /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* whenLambo_rn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whenLambo_rn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = whenLambo_rn/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = whenLambo_rn/AppDelegate.m; sourceTree = "<group>"; };
@@ -37,11 +39,25 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = whenLambo_rn/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = whenLambo_rn/main.m; sourceTree = "<group>"; };
 		273FC46A62FF5FD5DB59685F /* Pods-whenLambo_rn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whenLambo_rn.release.xcconfig"; path = "Target Support Files/Pods-whenLambo_rn/Pods-whenLambo_rn.release.xcconfig"; sourceTree = "<group>"; };
+		2E5757A9A6A44B539407DC7F /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		304992F4C7564FDDB63E603A /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		305D8CC9173FD7206571A258 /* Pods-whenLambo_rn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whenLambo_rn.debug.xcconfig"; path = "Target Support Files/Pods-whenLambo_rn/Pods-whenLambo_rn.debug.xcconfig"; sourceTree = "<group>"; };
+		3C5539BB1A1246B0A0F79612 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		3E6CFDE6AB8E1743D444DEF3 /* Pods-whenLambo_rn-whenLambo_rnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whenLambo_rn-whenLambo_rnTests.debug.xcconfig"; path = "Target Support Files/Pods-whenLambo_rn-whenLambo_rnTests/Pods-whenLambo_rn-whenLambo_rnTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4254C124D1690D09CD7144DC /* libPods-whenLambo_rn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-whenLambo_rn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4459722CBBA74D95960CDDDB /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		4E7EBA64988A4F4980AB8853 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		7A90167909FE97208848F62D /* libPods-whenLambo_rn-whenLambo_rnTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-whenLambo_rn-whenLambo_rnTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ABD6834D1DC425FAF41D33E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = whenLambo_rn/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82B1405583404CFDA6AC4762 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		9A13F6EA97F0410C82F2C9C1 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		9F954D4C384E40C4AD6244C9 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		A4907C14102044239F4E430F /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		D0CDB8A2E58946BD9BE3AAB6 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		DFBEB72EE3DB48D29F9440BE /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		E1A838E2E1634856965735D4 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		E5D4831AE9C945AAA06E1CB8 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F6D60D991FA0878905107510 /* Pods-whenLambo_rn-whenLambo_rnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whenLambo_rn-whenLambo_rnTests.release.xcconfig"; path = "Target Support Files/Pods-whenLambo_rn-whenLambo_rnTests/Pods-whenLambo_rn-whenLambo_rnTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +138,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				CD241793A60D789BB34A244B /* Pods */,
+				9D1B906FEFA844B4BC858177 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,6 +154,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9D1B906FEFA844B4BC858177 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1A838E2E1634856965735D4 /* AntDesign.ttf */,
+				82B1405583404CFDA6AC4762 /* Entypo.ttf */,
+				9A13F6EA97F0410C82F2C9C1 /* EvilIcons.ttf */,
+				9F954D4C384E40C4AD6244C9 /* Feather.ttf */,
+				A4907C14102044239F4E430F /* FontAwesome.ttf */,
+				D0CDB8A2E58946BD9BE3AAB6 /* FontAwesome5_Brands.ttf */,
+				012A774204104AA6BD81F3AA /* FontAwesome5_Regular.ttf */,
+				4459722CBBA74D95960CDDDB /* FontAwesome5_Solid.ttf */,
+				0AF12ADF8C754FF09EE96F7C /* Fontisto.ttf */,
+				2E5757A9A6A44B539407DC7F /* Foundation.ttf */,
+				7ABD6834D1DC425FAF41D33E /* Ionicons.ttf */,
+				DFBEB72EE3DB48D29F9440BE /* MaterialCommunityIcons.ttf */,
+				E5D4831AE9C945AAA06E1CB8 /* MaterialIcons.ttf */,
+				304992F4C7564FDDB63E603A /* Octicons.ttf */,
+				3C5539BB1A1246B0A0F79612 /* SimpleLineIcons.ttf */,
+				4E7EBA64988A4F4980AB8853 /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CD241793A60D789BB34A244B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +185,6 @@
 				3E6CFDE6AB8E1743D444DEF3 /* Pods-whenLambo_rn-whenLambo_rnTests.debug.xcconfig */,
 				F6D60D991FA0878905107510 /* Pods-whenLambo_rn-whenLambo_rnTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -201,7 +240,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -431,13 +470,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E6CFDE6AB8E1743D444DEF3 /* Pods-whenLambo_rn-whenLambo_rnTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				DEVELOPMENT_TEAM = 4K8PS4BF86;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = whenLambo_rnTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,10 +500,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F6D60D991FA0878905107510 /* Pods-whenLambo_rn-whenLambo_rnTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 4K8PS4BF86;
 				INFOPLIST_FILE = whenLambo_rnTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,6 +530,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4K8PS4BF86;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = whenLambo_rn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4K8PS4BF86;
 				INFOPLIST_FILE = whenLambo_rn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

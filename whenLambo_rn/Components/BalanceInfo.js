@@ -33,7 +33,6 @@ const BalanceInfo = ({ title, changePer, displayAmount, containerStyle }) => {
             marginRight: 2,
           }}
         >
-          $
         </Text>
         <Text
           style={{

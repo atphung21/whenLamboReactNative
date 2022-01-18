@@ -22,14 +22,16 @@ const dummyData = [
   },
 ];
 
+
 const Home = ({getHoldings, getCoinMarket, myHoldings, coins, myData, fetchMyHoldings}) => {
   useFocusEffect(
     React.useCallback(() => {
       fetchMyHoldings();
-      getHoldings((holdings = myData));
       getCoinMarket();
+      getHoldings((holdings = myData));
     }, []),
     );
+
     console.log('data; ',myData)
 
   let totalWallet = myHoldings.reduce(

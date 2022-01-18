@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Animated} from 'react-native';
 import {COLORS, SIZES, icons} from '../Constants/index';
-import {IconTextButton} from '../Components/index';
+import {IconTextButton, Form} from '../Components/index';
 import {connect} from 'react-redux';
 
 const MainLayout = ({children, isTradeModalVisible}) => {
@@ -33,6 +33,7 @@ const MainLayout = ({children, isTradeModalVisible}) => {
       style={{
         flex: 1,
       }}>
+      <Form/>
       {children}
       {/* Dim Background */}
       {isTradeModalVisible && (
